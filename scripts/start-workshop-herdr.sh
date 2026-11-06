@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 session_name="${LOOPCRAFT_HERDR_SESSION:-aie-loopcraft-workshop-2026}"
 workspace_label="${LOOPCRAFT_HERDR_WORKSPACE_LABEL:-Loopcraft Workshop}"
 tab_label="${LOOPCRAFT_HERDR_TAB_LABEL:-Start Here}"
-image="${LOOPCRAFT_WORKSHOP_IMAGE:-ghcr.io/joelhooks/aie-loopcraft-workshop-2026:latest}"
+image="${LOOPCRAFT_WORKSHOP_IMAGE:-ghcr.io/ryanlisse/aie-loopcraft-workshop-2026:latest}"
 compose=(bash scripts/docker-compose.sh)
 
 "${compose[@]}" version >/dev/null

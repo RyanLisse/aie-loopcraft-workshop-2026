@@ -11,7 +11,7 @@ Help them build a local issue-progress loop one step at a time. The loop eventua
 Use the Docker workshop computer unless the person running the workshop explicitly chooses the host-machine path. If they choose the host-machine path, follow `/appendix/full-setup-without-docker/` or `docs/full-setup-without-docker.md` end to end before lesson work starts.
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 corepack enable
 corepack prepare pnpm@11.9.0 --activate

@@ -49,7 +49,7 @@ If both fail, install or update Docker Desktop / OrbStack first. Host Herdr is n
 Clone the repo:
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 ```
 
@@ -98,29 +98,39 @@ If you already have a local image and want to skip the pull behavior in the scri
 LOOPCRAFT_SKIP_PULL=1 bash scripts/start-workshop-herdr.sh
 ```
 
-## GHCR private-image troubleshooting
+## GHCR and the local image
 
-Published image:
-
-```txt
-ghcr.io/joelhooks/aie-loopcraft-workshop-2026:latest
-```
-
-Package page:
+Image name used by this fork:
 
 ```txt
-https://github.com/users/joelhooks/packages/container/package/aie-loopcraft-workshop-2026
+ghcr.io/ryanlisse/aie-loopcraft-workshop-2026:latest
 ```
 
-If Docker says the package is private or unauthorized, the start script now falls back to a local image build. If you want the faster prebuilt-image path, authenticate to GitHub Packages:
+Package page (empty until you publish an image yourself):
+
+```txt
+https://github.com/users/RyanLisse/packages/container/package/aie-loopcraft-workshop-2026
+```
+
+This fork does not publish a prebuilt image, so the pull fails and the start script falls back to a local build. That local build is the normal path here. Build it once:
+
+```sh
+pnpm run workshop:build
+```
+
+Then start without the pull attempt:
+
+```sh
+pnpm run workshop:local
+```
+
+If you later publish your own image to GHCR, `pnpm run workshop` pulls it. If Docker says the package is private or unauthorized, authenticate to GitHub Packages:
 
 ```sh
 gh auth refresh -h github.com -s read:packages
 gh auth token | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
 pnpm run workshop
 ```
-
-If pull still fails during the workshop, build locally instead.
 
 ## Local image build
 
@@ -141,7 +151,7 @@ LOOPCRAFT_SKIP_PULL=1 bash scripts/start-workshop-herdr.sh
 Quick smoke test for the published image:
 
 ```sh
-docker run --rm ghcr.io/joelhooks/aie-loopcraft-workshop-2026:latest \
+docker run --rm ghcr.io/ryanlisse/aie-loopcraft-workshop-2026:latest \
   zsh -lc 'pi --version && codex --version && opencode --version && herdr --version'
 ```
 
@@ -213,7 +223,7 @@ The complete local-machine checklist and agent instructions live in:
 Short version:
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 
 # after installing/verifying Git, Node 22+, pnpm, Bun, Pi, and optionally Herdr

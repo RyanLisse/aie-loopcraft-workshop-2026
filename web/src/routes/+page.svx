@@ -222,7 +222,7 @@ Stop rules: do not edit files before Lesson 01 asks. Lesson 01 stops at VISION.m
 <ol class="start-steps">
       <li>
         <span>Clone the repo.</span>
-        <pre><code>git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+        <pre><code>git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026</code></pre>
       </li>
       <li>

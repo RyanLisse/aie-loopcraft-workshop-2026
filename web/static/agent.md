@@ -16,7 +16,7 @@ Read these public instructions first. These are real served paths on this site:
 6. `/lessons/01-tour-vision-repo/prompt.txt` — pasteable Lesson 01 starter prompt
 
 Setup, fallback paths, and troubleshooting live in the repo at `docs/setup.md`
-(viewable at `https://github.com/joelhooks/aie-loopcraft-workshop-2026/blob/main/docs/setup.md`).
+(viewable at `https://github.com/RyanLisse/aie-loopcraft-workshop-2026/blob/main/docs/setup.md`).
 Complete local-machine setup without Docker lives at `docs/full-setup-without-docker.md`
 and is served at `/appendix/full-setup-without-docker/`.
 There is no `/docs/` route on this site, so read setup docs from the repo or the served appendix, not a guessed URL.
@@ -37,7 +37,7 @@ If you are working in a cloned repo, read these files too:
 Use Docker as the main path:
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 corepack enable
 corepack prepare pnpm@11.9.0 --activate

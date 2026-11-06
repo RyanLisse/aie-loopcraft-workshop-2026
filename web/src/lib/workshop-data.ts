@@ -2,8 +2,8 @@ export const site = {
   slug: "aie-loopcraft-workshop-2026",
   title: "AI Engineer Loopcraft Workshop 2026",
   url: "https://aie-loopcraft-workshop-2026.wzrrd.sh/",
-  repo: "https://github.com/joelhooks/aie-loopcraft-workshop-2026",
-  version: "0.8.14",
+  repo: "https://github.com/RyanLisse/aie-loopcraft-workshop-2026",
+  version: "0.8.15",
 };
 
 export type Lesson = {

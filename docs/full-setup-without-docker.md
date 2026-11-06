@@ -146,7 +146,7 @@ If a command is missing, stop and fix that one tool. Do not edit the workshop re
 ## 3. Clone the workshop repo
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 
 git status --short

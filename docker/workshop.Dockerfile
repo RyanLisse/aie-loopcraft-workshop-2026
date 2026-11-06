@@ -2,7 +2,7 @@
 
 FROM node:22-bookworm
 
-LABEL org.opencontainers.image.source="https://github.com/joelhooks/aie-loopcraft-workshop-2026"
+LABEL org.opencontainers.image.source="https://github.com/RyanLisse/aie-loopcraft-workshop-2026"
 LABEL org.opencontainers.image.description="AI Engineer Loopcraft Workshop 2026 workshop computer"
 
 ARG PI_VERSION=1.5.0

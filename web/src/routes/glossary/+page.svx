@@ -70,7 +70,7 @@
       definition: "The prepared container for the workshop. It gives everyone the same repo path, tools, and local setup without using Joel's private machine config.",
       useItWhen: "Use it for the normal workshop path. Use the no-Docker appendix only when you intentionally set up the host machine instead.",
       links: [
-        { label: "Setup", href: "https://github.com/joelhooks/aie-loopcraft-workshop-2026/blob/main/docs/setup.md" },
+        { label: "Setup", href: "https://github.com/RyanLisse/aie-loopcraft-workshop-2026/blob/main/docs/setup.md" },
         { label: "Local setup appendix", href: "/appendix/full-setup-without-docker/" },
       ],
     },

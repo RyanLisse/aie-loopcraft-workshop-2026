@@ -11,6 +11,7 @@
     "workshop:shell": "bash scripts/docker-compose.sh run --rm workshop zsh",
     "workshop:pi": "bash scripts/docker-compose.sh run --rm workshop zsh -lc 'pi'",
     "workshop:herdr": "bash scripts/start-workshop-herdr.sh",
+    "workshop:local": "LOOPCRAFT_SKIP_PULL=1 bash scripts/start-workshop-herdr.sh",
     "workshop:daemon": "node scripts/loop-daemon-stub.mjs",
     "web:install": "cd web && bun install",
     "web:check": "cd web && bun run check",

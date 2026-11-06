@@ -15,7 +15,7 @@ Prereqs:
 > **Fast track requires Docker Compose.** Before running the start command, make sure either `docker compose version` or `docker-compose version` works. If both fail, install or update Docker Desktop / OrbStack first.
 
 ```sh
-git clone https://github.com/joelhooks/aie-loopcraft-workshop-2026.git
+git clone https://github.com/RyanLisse/aie-loopcraft-workshop-2026.git
 cd aie-loopcraft-workshop-2026
 corepack enable
 corepack prepare pnpm@11.9.0 --activate
@@ -23,6 +23,13 @@ pnpm run workshop
 ```
 
 `pnpm run workshop` starts Herdr inside the Docker container. It does not use host Herdr.
+
+This fork does not publish a prebuilt image, so the first run builds the image locally. For faster later starts, build once and then use the local script:
+
+```sh
+pnpm run workshop:build
+pnpm run workshop:local
+```
 
 When Herdr opens:
 

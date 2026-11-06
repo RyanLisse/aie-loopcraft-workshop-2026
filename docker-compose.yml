@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: docker/workshop.Dockerfile
-    image: ghcr.io/joelhooks/aie-loopcraft-workshop-2026:latest
+    image: ghcr.io/ryanlisse/aie-loopcraft-workshop-2026:latest
     working_dir: /workspace
     stdin_open: true
     tty: true

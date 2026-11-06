@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { site } from "$lib/workshop-data";
+  import { site } from "#lib/workshop-data.ts";
 
   type PhaseItem = string | {
     id?: string;

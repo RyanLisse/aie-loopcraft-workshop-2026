@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
+  import { browser } from '$app/env';
   import { HugeiconsIcon } from "@hugeicons/svelte";
   import type { IconSvgElement } from "@hugeicons/svelte";
   import {
@@ -76,7 +76,7 @@
       class="feedback-toggle"
       class:active={drawerOpen}
       aria-expanded={drawerOpen}
-      onclick={() => (drawerOpen = !drawerOpen)}
+      onclick={() => drawerOpen = !drawerOpen}
     >
       <HugeiconsIcon icon={ChatEditIcon} size={14} strokeWidth={1.8} />
       <span>steer</span>
@@ -90,10 +90,8 @@
           aria-label={item.label}
           aria-pressed={reaction === item.id}
           title={item.label}
-          onclick={() => (reaction = reaction === item.id ? "" : item.id)}
-        >
-          <HugeiconsIcon icon={item.icon} size={15} strokeWidth={1.8} />
-        </button>
+          onclick={() => reaction = reaction === item.id ? "" : item.id}
+        ><HugeiconsIcon icon={item.icon} size={15} strokeWidth={1.8} /></button>
       {/each}
     </div>
 

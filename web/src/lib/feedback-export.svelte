@@ -1,29 +1,13 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
+  import { browser } from '$app/env';
   import { HugeiconsIcon } from "@hugeicons/svelte";
   import { Copy01Icon, CopyCheckIcon } from "@hugeicons/core-free-icons";
   import { onMount } from "svelte";
 
-  interface StoredFeedback {
-    reaction?: string;
-    steering?: string;
-    vote?: string;
-  }
-
-  interface QuestionExport {
-    id: string;
-    prompt: string;
-  }
-
-  interface PatternExport {
-    id: string;
-    title: string;
-  }
-
-  interface LessonExport {
-    id: string;
-    title: string;
-  }
+  interface StoredFeedback { reaction?: string; steering?: string; vote?: string }
+  interface QuestionExport { id: string; prompt: string }
+  interface PatternExport { id: string; title: string }
+  interface LessonExport { id: string; title: string }
 
   interface Props {
     paragraphs?: string[];
@@ -65,8 +49,8 @@
       if (!reaction && !steering) return null;
       return {
         p: paragraph,
-        ...(reaction ? { r: reaction } : {}),
-        ...(steering ? { s: steering } : {}),
+        ...reaction ? { r: reaction } : {},
+        ...steering ? { s: steering } : {}
       };
     } catch {
       return null;
@@ -152,7 +136,7 @@
     copiedCount = payload.items.length + payload.answers.length + payload.patternFeedback.length + payload.lessonNotes.length;
     copied = true;
     void copyText(JSON.stringify(payload)).catch(() => {});
-    window.setTimeout(() => (copied = false), 6000);
+    window.setTimeout(() => copied = false, 6000);
   }
 
   onMount(() => {

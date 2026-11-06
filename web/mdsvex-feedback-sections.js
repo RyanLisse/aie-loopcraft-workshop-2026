@@ -6,6 +6,10 @@
 export function feedbackSectionsPreprocess() {
   return {
     name: "feedback-sections-preprocess",
+    /**
+     * @param {{ content: string, filename?: string }} options
+     * @returns {{ code: string }}
+     */
     markup({ content, filename }) {
       if (!filename?.endsWith(".svx")) return { code: content };
 
@@ -40,6 +44,10 @@ export function feedbackSectionsPreprocess() {
   };
 }
 
+/**
+ * @param {string} path
+ * @returns {string | undefined}
+ */
 function feedbackPrefixFromPath(path) {
   const normalized = path.replaceAll("\\\\", "/");
 
@@ -52,16 +60,30 @@ function feedbackPrefixFromPath(path) {
   return undefined;
 }
 
+/**
+ * @param {string} line
+ * @returns {boolean}
+ */
 function isSectionBoundary(line) {
   return /^\s*(<FeedbackExportGate\b|<footer\b|<\/LessonShell>|<\/ReportLayout>|<style\b)/.test(line);
 }
 
+/**
+ * @param {string} line
+ * @returns {string}
+ */
 function h2Title(line) {
   const match = line.match(/^\s*<h2(?:\s[^>]*)?>(.*?)<\/h2>\s*$/is);
   if (!match) return "";
   return match[1].replace(/<[^>]+>/g, "").trim();
 }
 
+/**
+ * @param {string} prefix
+ * @param {string} title
+ * @param {Map<string, number>} used
+ * @returns {string}
+ */
 function sectionId(prefix, title, used) {
   const baseSlug = sectionAliases[slugify(prefix)]?.[slugify(title)] ?? slugify(title);
   const base = `${prefix}-${baseSlug}`;
@@ -70,6 +92,10 @@ function sectionId(prefix, title, used) {
   return count === 0 ? base : `${base}-${count + 1}`;
 }
 
+/**
+ * @param {string} value
+ * @returns {string}
+ */
 function slugify(value) {
   return value
     .normalize("NFKD")
@@ -81,6 +107,7 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+/** @type {Record<string, string>} */
 const lessonSectionAliases = {
   "what-were-trying-to-build": "prompt-context",
   "what-you-should-see": "what-you-should-see",
@@ -103,6 +130,7 @@ const lessonSectionAliases = {
   "why-this-step-exists": "receipt",
 };
 
+/** @type {Record<string, Record<string, string>>} */
 const sectionAliases = {
   home: {
     "agent-quickstart": "agent-quickstart",

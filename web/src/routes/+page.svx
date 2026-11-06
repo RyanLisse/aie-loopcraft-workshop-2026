@@ -1,15 +1,15 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import FeedbackExportGate from "$lib/feedback-export-gate.svelte";
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import { isFeedbackEnabled, withFeedback } from "$lib/feedback";
-  import FlowChart from "$lib/flow-chart.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReportLayout from "$lib/ReportLayout.svelte";
-  import StatLine from "$lib/stat-line.svelte";
-  import ToolGrid from "$lib/tool-grid.svelte";
-  import WorkshopNav from "$lib/workshop-nav.svelte";
-  import { lessons, site, stats } from "$lib/workshop-data";
+  import FeedbackExportGate from "#lib/feedback-export-gate.svelte";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import { isFeedbackEnabled, withFeedback } from "#lib/feedback.ts";
+  import FlowChart from "#lib/flow-chart.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReportLayout from "#lib/ReportLayout.svelte";
+  import StatLine from "#lib/stat-line.svelte";
+  import ToolGrid from "#lib/tool-grid.svelte";
+  import WorkshopNav from "#lib/workshop-nav.svelte";
+  import { lessons, site, stats } from "#lib/workshop-data.ts";
 
   type HomeTool = {
     name: string;

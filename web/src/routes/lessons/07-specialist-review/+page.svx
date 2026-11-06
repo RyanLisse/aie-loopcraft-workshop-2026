@@ -1,13 +1,13 @@
 <script lang="ts">
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import ExplorationPrompts from "$lib/lesson-page/exploration-prompts.svelte";
-  import LessonEvidence from "$lib/lesson-page/lesson-evidence.svelte";
-  import LessonShell from "$lib/lesson-page/lesson-shell.svelte";
-  import LessonScaffold from "$lib/lesson-page/lesson-scaffold.svelte";
-  import PhaseChecklist from "$lib/lesson-page/phase-checklist.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReceiptTemplate from "$lib/lesson-page/receipt-template.svelte";
-  import { getLesson } from "$lib/workshop-data";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import ExplorationPrompts from "#lib/lesson-page/exploration-prompts.svelte";
+  import LessonEvidence from "#lib/lesson-page/lesson-evidence.svelte";
+  import LessonShell from "#lib/lesson-page/lesson-shell.svelte";
+  import LessonScaffold from "#lib/lesson-page/lesson-scaffold.svelte";
+  import PhaseChecklist from "#lib/lesson-page/phase-checklist.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReceiptTemplate from "#lib/lesson-page/receipt-template.svelte";
+  import { getLesson } from "#lib/workshop-data.ts";
 
   const lesson = getLesson("specialist-review");
   const promptContext = "A second agent is leverage right up until it becomes a second, unsupervised path into your files. A reviewer is useful when your main script decides what to ask, writes the input, saves the note, and waits for you before anything changes. It is dangerous the moment it turns into a quiet implementer. So this lesson keeps the reviewer strictly read-only: it contributes evidence, the checker shows that evidence, and you still make the call. Asking for help should not cost you ownership.";

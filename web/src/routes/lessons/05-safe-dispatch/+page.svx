@@ -1,13 +1,13 @@
 <script lang="ts">
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import ExplorationPrompts from "$lib/lesson-page/exploration-prompts.svelte";
-  import LessonEvidence from "$lib/lesson-page/lesson-evidence.svelte";
-  import LessonShell from "$lib/lesson-page/lesson-shell.svelte";
-  import LessonScaffold from "$lib/lesson-page/lesson-scaffold.svelte";
-  import PhaseChecklist from "$lib/lesson-page/phase-checklist.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReceiptTemplate from "$lib/lesson-page/receipt-template.svelte";
-  import { getLesson } from "$lib/workshop-data";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import ExplorationPrompts from "#lib/lesson-page/exploration-prompts.svelte";
+  import LessonEvidence from "#lib/lesson-page/lesson-evidence.svelte";
+  import LessonShell from "#lib/lesson-page/lesson-shell.svelte";
+  import LessonScaffold from "#lib/lesson-page/lesson-scaffold.svelte";
+  import PhaseChecklist from "#lib/lesson-page/phase-checklist.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReceiptTemplate from "#lib/lesson-page/receipt-template.svelte";
+  import { getLesson } from "#lib/workshop-data.ts";
 
   const lesson = getLesson("safe-dispatch");
   const promptContext = "This is where people get sloppy. Ready is not permission to turn an unsupervised agent loose on your files — it is permission to claim the work and prove you can hold the line. So the script checks that the issue is actually ready, writes a claim before any work attempt, runs only a dry-run or memory-mode step, and saves evidence that nothing in the product changed. The checker earns the right to ask for work by proving it can refuse work first.";

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import ExplorationPrompts from "$lib/lesson-page/exploration-prompts.svelte";
-  import LessonEvidence from "$lib/lesson-page/lesson-evidence.svelte";
-  import LessonShell from "$lib/lesson-page/lesson-shell.svelte";
-  import LessonScaffold from "$lib/lesson-page/lesson-scaffold.svelte";
-  import PhaseChecklist from "$lib/lesson-page/phase-checklist.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReceiptTemplate from "$lib/lesson-page/receipt-template.svelte";
-  import { getLesson } from "$lib/workshop-data";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import ExplorationPrompts from "#lib/lesson-page/exploration-prompts.svelte";
+  import LessonEvidence from "#lib/lesson-page/lesson-evidence.svelte";
+  import LessonShell from "#lib/lesson-page/lesson-shell.svelte";
+  import LessonScaffold from "#lib/lesson-page/lesson-scaffold.svelte";
+  import PhaseChecklist from "#lib/lesson-page/phase-checklist.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReceiptTemplate from "#lib/lesson-page/receipt-template.svelte";
+  import { getLesson } from "#lib/workshop-data.ts";
 
   const lesson = getLesson("reliability-floor");
   const promptContext = "Agents get slippery fast when inputs, decisions, stop messages, and next actions are only implied. Give one room to guess and it will — confidently, in the wrong direction. So this lesson turns VISION.md into one local event file and one strict check command you can actually trust: it reads every row, fails loudly on bad input, shows what is ready, what needs approval, and what needs more input, and saves a receipt the next pass can believe. By the end the repo can prove something, not just explain itself.";

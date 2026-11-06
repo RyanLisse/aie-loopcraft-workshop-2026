@@ -22,5 +22,9 @@
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.4.0",
     "@hugeicons/svelte": "^1.1.5"
+  },
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
   }
 }

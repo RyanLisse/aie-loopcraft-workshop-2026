@@ -5,13 +5,13 @@ FROM node:22-bookworm
 LABEL org.opencontainers.image.source="https://github.com/joelhooks/aie-loopcraft-workshop-2026"
 LABEL org.opencontainers.image.description="AI Engineer Loopcraft Workshop 2026 workshop computer"
 
-ARG PI_VERSION=0.80.2
-ARG CLAUDE_CODE_VERSION=2.1.195
-ARG CODEX_VERSION=0.142.3
-ARG OPENCODE_VERSION=1.17.11
-ARG HERDR_VERSION=0.7.1
-ARG STARSHIP_VERSION=1.25.1
-ARG ATUIN_VERSION=18.16.1
+ARG PI_VERSION=1.5.0
+ARG CLAUDE_CODE_VERSION=2.1.319
+ARG CODEX_VERSION=0.167.0
+ARG OPENCODE_VERSION=1.19.5
+ARG HERDR_VERSION=0.9.5
+ARG STARSHIP_VERSION=1.27.0
+ARG ATUIN_VERSION=18.24.5
 ARG OH_MY_ZSH_REF=65749801cf4c3b1f3c79a20001909d72dadd307f
 ARG ZSH_AUTOSUGGESTIONS_REF=85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5
 ARG ZSH_SYNTAX_HIGHLIGHTING_REF=1d85c692615a25fe2293bdd44b34c217d5d2bf04
@@ -26,6 +26,10 @@ ENV NPM_CONFIG_STORE_DIR=/home/${USERNAME}/.local/share/pnpm/store
 ENV PATH=/home/${USERNAME}/.local/share/pnpm:/home/${USERNAME}/.npm-global/bin:/home/${USERNAME}/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV SHELL=/usr/bin/zsh
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+# Keep corepack's prepared pnpm in the workshop user's home. Without this the
+# user's shim cannot see root's prepared version and silently downloads
+# whatever `latest` resolves to at build time.
+ENV COREPACK_HOME=/home/${USERNAME}/.cache/node/corepack
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
@@ -68,7 +72,8 @@ RUN corepack enable \
   esac \
   && curl -fsSL -o /usr/local/bin/herdr "https://github.com/ogulcancelik/herdr/releases/download/v${HERDR_VERSION}/herdr-linux-${herdr_arch}" \
   && chmod +x /usr/local/bin/herdr \
-  && herdr --version
+  && herdr --version \
+  && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.cache
 
 RUN case "${TARGETARCH:-$(dpkg --print-architecture)}" in \
     amd64) starship_target="x86_64-unknown-linux-gnu" ;; \

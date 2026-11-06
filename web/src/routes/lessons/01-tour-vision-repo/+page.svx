@@ -1,13 +1,13 @@
 <script lang="ts">
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import ExplorationPrompts from "$lib/lesson-page/exploration-prompts.svelte";
-  import LessonEvidence from "$lib/lesson-page/lesson-evidence.svelte";
-  import LessonShell from "$lib/lesson-page/lesson-shell.svelte";
-  import LessonScaffold from "$lib/lesson-page/lesson-scaffold.svelte";
-  import PhaseChecklist from "$lib/lesson-page/phase-checklist.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReceiptTemplate from "$lib/lesson-page/receipt-template.svelte";
-  import { getLesson } from "$lib/workshop-data";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import ExplorationPrompts from "#lib/lesson-page/exploration-prompts.svelte";
+  import LessonEvidence from "#lib/lesson-page/lesson-evidence.svelte";
+  import LessonShell from "#lib/lesson-page/lesson-shell.svelte";
+  import LessonScaffold from "#lib/lesson-page/lesson-scaffold.svelte";
+  import PhaseChecklist from "#lib/lesson-page/phase-checklist.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReceiptTemplate from "#lib/lesson-page/receipt-template.svelte";
+  import { getLesson } from "#lib/workshop-data.ts";
 
   const lesson = getLesson("tour-vision-repo");
   const promptContext = "An agent with no rules will write code fast — the wrong code, in the wrong files, past the point where you wanted it to stop and ask. So before any product code exists, we name the job, the files it may touch, and the moments it must stop for you. We are building a local issue checker: something that reads a few issue events, decides what is ready, what needs approval, and what needs more input, and writes down what happened. Not today, though — today the only outputs are VISION.md and any repo rule worth keeping. Agents behave better when the rules are written down before the first line of code.";

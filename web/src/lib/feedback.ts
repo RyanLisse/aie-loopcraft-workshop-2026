@@ -1,8 +1,13 @@
-import { browser } from "$app/environment";
+import { browser } from "$app/env";
 
 export const feedbackStoragePrefix = "aie-loopcraft-workshop-2026-feedback:";
 
-export function isFeedbackEnabled(url: URL) {
+/**
+ * SvelteKit 3 types `page.url` as a readonly URL, so accept the minimal shape
+ * this helper actually reads instead of a mutable `URL`.
+ * @param {{ readonly searchParams: { get(name: string): string | null } }} url
+ */
+export function isFeedbackEnabled(url: { readonly searchParams: { get(name: string): string | null } }) {
   if (!browser) return false;
   return url.searchParams.get("feedback") === "1";
 }

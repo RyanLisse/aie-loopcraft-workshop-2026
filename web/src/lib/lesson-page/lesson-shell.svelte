@@ -1,13 +1,13 @@
 <script lang="ts">
   import { page } from "$app/state";
   import type { Snippet } from "svelte";
-  import FeedbackExportGate from "$lib/feedback-export-gate.svelte";
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import { isFeedbackEnabled, withFeedback } from "$lib/feedback";
-  import LessonNavigation from "$lib/lesson-navigation.svelte";
-  import ReportLayout from "$lib/ReportLayout.svelte";
-  import WorkshopNav from "$lib/workshop-nav.svelte";
-  import { site, type Lesson } from "$lib/workshop-data";
+  import FeedbackExportGate from "#lib/feedback-export-gate.svelte";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import { isFeedbackEnabled, withFeedback } from "#lib/feedback.ts";
+  import LessonNavigation from "#lib/lesson-navigation.svelte";
+  import ReportLayout from "#lib/ReportLayout.svelte";
+  import WorkshopNav from "#lib/workshop-nav.svelte";
+  import { site, type Lesson } from "#lib/workshop-data.ts";
 
   interface Props {
     lesson: Lesson;

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import FeedbackSection from "$lib/feedback-section.svelte";
-  import ExplorationPrompts from "$lib/lesson-page/exploration-prompts.svelte";
-  import LessonEvidence from "$lib/lesson-page/lesson-evidence.svelte";
-  import LessonShell from "$lib/lesson-page/lesson-shell.svelte";
-  import LessonScaffold from "$lib/lesson-page/lesson-scaffold.svelte";
-  import PhaseChecklist from "$lib/lesson-page/phase-checklist.svelte";
-  import PromptBlock from "$lib/prompt-block.svelte";
-  import ReceiptTemplate from "$lib/lesson-page/receipt-template.svelte";
-  import { getLesson } from "$lib/workshop-data";
+  import FeedbackSection from "#lib/feedback-section.svelte";
+  import ExplorationPrompts from "#lib/lesson-page/exploration-prompts.svelte";
+  import LessonEvidence from "#lib/lesson-page/lesson-evidence.svelte";
+  import LessonShell from "#lib/lesson-page/lesson-shell.svelte";
+  import LessonScaffold from "#lib/lesson-page/lesson-scaffold.svelte";
+  import PhaseChecklist from "#lib/lesson-page/phase-checklist.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
+  import ReceiptTemplate from "#lib/lesson-page/receipt-template.svelte";
+  import { getLesson } from "#lib/workshop-data.ts";
 
   const lesson = getLesson("bounded-gardener");
   const promptContext = "This is the first command that can create work — which makes it the first that can quietly bury you in bad work. So its job is deliberately tiny: scan a short list of maintenance signals and propose at most one issue event, with hard stops everywhere it might do damage. It is not a little product agent. If the repo is dirty, the loop is already running, or a matching follow-up exists, it prints why and quits. Stopping is part of the feature, not a failure of it.";

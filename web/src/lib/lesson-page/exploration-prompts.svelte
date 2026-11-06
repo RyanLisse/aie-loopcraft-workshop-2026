@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PromptBlock from "$lib/prompt-block.svelte";
+  import PromptBlock from "#lib/prompt-block.svelte";
 
   export type ExplorationPrompt = {
     label: string;
